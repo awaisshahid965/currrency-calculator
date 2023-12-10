@@ -9,13 +9,13 @@
   },
   "scripts": {
     "prepare": "husky install",
-    "lint-staged": "lint-staged"
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "husky": "^8.0.0",
-    "lint-staged": "^15.2.0"
+    "prettier": "^3.1.1"
   }
 }
