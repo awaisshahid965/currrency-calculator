@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+exec 1> /dev/tty
+npm --prefix=client run typecheck
+npm --prefix=client run lint:fix
+npm --prefix=server run typecheck
+npm --prefix=server run lint:fix
+npm run format
+git add .
