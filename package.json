@@ -1,0 +1,21 @@
+{
+  "name": "currrency-calculator",
+  "version": "1.0.0",
+  "description": "MERN app with basic calculator operations with proper SOLID Principle implementation",
+  "main": "index.js",
+  "engines": {
+    "node": ">=20.9.0",
+    "npm": ">=10.1.0"
+  },
+  "scripts": {
+    "prepare": "husky install",
+    "lint-staged": "lint-staged"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^15.2.0"
+  }
+}
