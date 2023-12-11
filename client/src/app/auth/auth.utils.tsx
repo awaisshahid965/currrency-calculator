@@ -10,14 +10,24 @@ export const renderChangeAuthTypeContent = (
     return (
       <div className={styleClasses['auth__change-type']}>
         <p>Already have an account,</p>
-        <CustomButton title="Signin" type="link" onClick={() => onClickChangeAuthType(AuthType.SIGNIN)} classNames={styleClasses['auth__type-change-btn']} />
+        <CustomButton
+          title="Signin"
+          type="link"
+          onClick={() => onClickChangeAuthType(AuthType.SIGNIN)}
+          classNames={styleClasses['auth__type-change-btn']}
+        />
       </div>
     )
   }
   return (
     <div className={styleClasses['auth__change-type']}>
       <p>Dont have an account,</p>
-      <CustomButton title="Signup" type="link" onClick={() => onClickChangeAuthType(AuthType.SIGNUP)} classNames={styleClasses['auth__type-change-btn']} />
+      <CustomButton
+        title="Signup"
+        type="link"
+        onClick={() => onClickChangeAuthType(AuthType.SIGNUP)}
+        classNames={styleClasses['auth__type-change-btn']}
+      />
     </div>
   )
 }

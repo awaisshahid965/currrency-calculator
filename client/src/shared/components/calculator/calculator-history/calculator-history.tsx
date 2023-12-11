@@ -2,17 +2,18 @@ import React, { FC } from 'react'
 import styleClasses from '../calculator.module.scss'
 
 interface CalculatorHistoryProps {
-    calculations: Array<string>
+  calculations: Array<string>
 }
 
 const CalculatorHistory: FC<CalculatorHistoryProps> = ({ calculations }) => {
   return (
     <div className={styleClasses['calculator__history-wrapper']}>
-        {
-            calculations.map(calculation => (
-                <p className={styleClasses['calculator__history-wrapper--item']}>{calculation}</p>
-            ))
-        }
+      <p>History:</p>
+      {calculations.map((calculation, index) => (
+        <p key={`${calculation}-${index}`} className={styleClasses['calculator__history-wrapper--item']}>
+          {calculation}
+        </p>
+      ))}
     </div>
   )
 }

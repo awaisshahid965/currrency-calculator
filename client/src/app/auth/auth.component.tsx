@@ -73,7 +73,7 @@ const Auth = () => {
         <div className={styleClasses['auth__google']}>
           <p className={styleClasses['auth__google-text']}>Or SignOn using</p>
           <CustomButton
-            title='Google'
+            title="Google"
             classNames={styleClasses['auth__google-button']}
             type="primary"
             size="middle"
