@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 2rem 4rem;
+  justify-content: space-between;
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}

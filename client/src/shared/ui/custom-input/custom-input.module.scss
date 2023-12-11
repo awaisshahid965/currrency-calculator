@@ -1,0 +1,15 @@
+.custom-input {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  &__error {
+    color: var(--color-error);
+    margin: 5px 2px;
+    font-weight: 600;
+  }
+}
