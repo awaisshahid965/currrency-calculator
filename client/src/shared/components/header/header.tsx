@@ -11,7 +11,7 @@ const Header = () => {
       <h3>CurrencyCalc.</h3>
       <nav className={headerStyles['header__nav']}>
         <p>
-          <b>Email:</b>
+          <b>Email: </b>
           {user?.email}
         </p>
         <CustomButton title="logout" type="primary" onClick={signout} />

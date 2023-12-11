@@ -1,10 +1,10 @@
 'use client'
 
 import React from 'react'
-import Signin from './signin.component'
+import Auth from './auth.component'
 
-const SigninPage = () => {
-  return <Signin />
+const AuthPage = () => {
+  return <Auth />
 }
 
-export default SigninPage
+export default AuthPage

@@ -1,4 +1,4 @@
-import { signOut, createUserWithEmailAndPassword, User, signInWithEmailAndPassword } from 'firebase/auth'
+import { signOut, createUserWithEmailAndPassword, User, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 import { auth } from '@/lib/firebase'
 import { AuthUser } from '@/context/auth/auth-interface'
 
@@ -81,6 +81,23 @@ class AuthService {
 
   static async signout() {
     await signOut(auth)
+  }
+
+  static async signOnUsingGoogle() {
+    const googleProvider = new GoogleAuthProvider()
+    try {
+      const authData = await signInWithPopup(auth, googleProvider)
+
+      return {
+        isSignedIn: true,
+        userData: getAuthUserFromFirebaseUser(authData.user),
+      }
+    } catch (err) {
+      return {
+        isSignedIn: false,
+        userData: null,
+      }
+    }
   }
 }
 

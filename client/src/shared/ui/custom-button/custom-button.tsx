@@ -10,6 +10,7 @@ interface CustomButtonProps {
   disabled?: boolean
   hide?: boolean
   onClick?: () => void
+  danger?: boolean
 }
 
 const CustomButton: FC<CustomButtonProps> = ({
@@ -21,6 +22,7 @@ const CustomButton: FC<CustomButtonProps> = ({
   disabled = false,
   hide,
   onClick,
+  danger,
 }) => {
   const onButtonClick = () => {
     onClick?.()
@@ -36,6 +38,7 @@ const CustomButton: FC<CustomButtonProps> = ({
       className={classNames}
       onClick={onButtonClick}
       disabled={disabled}
+      danger={danger}
     >
       {title}
     </AntdButton>

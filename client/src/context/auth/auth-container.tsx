@@ -50,7 +50,6 @@ const AuthContainer: FC<PropsWithChildren> = ({ children }) => {
       setErrorInState(authErrors)
       return
     }
-    console.log(respectiveAuthService[authState.authType].name)
     const { isSignedIn, userData } = await respectiveAuthService[authState.authType](email, password)
     if (isSignedIn) {
       setAuthState((prevState) => ({
@@ -64,6 +63,21 @@ const AuthContainer: FC<PropsWithChildren> = ({ children }) => {
       form: 'Wrong Credentials',
     })
     return
+  }
+
+  const googleSignOn = async () => {
+    const { isSignedIn, userData } = await AuthService.signOnUsingGoogle()
+    if (isSignedIn) {
+      setAuthState((prevState) => ({
+        ...prevState,
+        user: userData,
+      }))
+      router.push('/')
+      return
+    }
+    setErrorInState({
+      form: 'Google SignOn failed...',
+    })
   }
 
   const signout = async () => {
@@ -85,7 +99,7 @@ const AuthContainer: FC<PropsWithChildren> = ({ children }) => {
   if (authState.loading) {
     return null
   }
-  return <AuthProvider value={{ ...authState, auth, signout, changeAuthType }}>{children}</AuthProvider>
+  return <AuthProvider value={{ ...authState, auth, signout, changeAuthType, googleSignOn }}>{children}</AuthProvider>
 }
 
 export default AuthContainer
