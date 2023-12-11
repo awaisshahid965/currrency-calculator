@@ -7,5 +7,6 @@ module.exports = {
   ],
   rules: {
     'prettier/prettier': ['error', { configFile: '../.prettierrc', ignorePath: '../.prettierignore' }],
+    'no-unused-vars': "off"
   },
 };
