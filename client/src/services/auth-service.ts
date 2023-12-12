@@ -9,11 +9,6 @@ import {
 import { auth } from '@/lib/firebase'
 import { AuthUser } from '@/context/auth/auth-interface'
 
-enum AuthEndpoints {
-  LOGIN = '/auth/login',
-  VALIDATE_USER = '/auth/validation-status',
-}
-
 const getFirebaseAuthUser = async () => {
   try {
     const user = await new Promise((resolve, reject) => {
