@@ -1,10 +1,11 @@
-const path = require("path");
+const path = require('path')
 
 const buildEslintCommand = (filenames) =>
-  `eslint --fix ${filenames
-    .map((f) => path.relative(process.cwd(), f))
-    .join(" ")}`;
+  `eslint --fix ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')}`
+
+const buildPrettierCommand = (filenames) =>
+  `prettier --write ${filenames.map((f) => path.relative(process.cwd(), f)).join(' ')}`
 
 module.exports = {
-  "*.ts": [buildEslintCommand, "npm run format"],
-};
+  '*.ts': [buildEslintCommand, buildPrettierCommand],
+}
