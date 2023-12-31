@@ -7,6 +7,9 @@ module.exports = {
     ],
     parser: "@typescript-eslint/parser",
     rules: {
-      'prettier/prettier': ['error', { configFile: '../.prettierrc', ignorePath: '../.prettierignore' }],
+      'prettier/prettier': ['error'],
+      "linebreak-style": ["error", "unix"],
+      "quotes": ["error", "single"],
+      "semi": ["error", "never"],
     },
 };
