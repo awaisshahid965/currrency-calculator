@@ -1,28 +1,18 @@
+import 'reflect-metadata'
 import dotenv from 'dotenv'
-import express, { Express, Request, Response } from 'express'
 import Mongodb from './config/database'
-import { currencyCalculatorRouter } from './api/currency-calculator/currency-calculator.routes'
-import cors from 'cors'
+import http from 'http'
+import { setupInversifyExpressApp } from './adapters/inversify-express'
 
 dotenv.config()
 
-const app: Express = express()
 const port = process.env.PORT
-
-app.use(express.json())
-app.use(cors())
-
-app.get('/', (_: Request, res: Response) => {
-  res.send('Express + TypeScript Server')
-})
-
-// apis
-app.use('/api/calculator', currencyCalculatorRouter)
+const inversifyExpressApp = setupInversifyExpressApp()
 
 const initServer = async () => {
   await Mongodb.init()
-
-  app.listen(port, () => {
+  const httpServer = http.createServer(inversifyExpressApp)
+  httpServer.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`)
   })
 }
