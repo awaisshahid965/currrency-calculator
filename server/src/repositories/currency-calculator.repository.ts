@@ -1,5 +1,7 @@
 import { CurrencyCalculatorModel } from '../api/currency-calculator/currency-calculator.modal'
+import { injectable } from 'inversify'
 
+@injectable()
 class CurrencyCalculatorRepository {
   private currencyCalculatorModel
 
